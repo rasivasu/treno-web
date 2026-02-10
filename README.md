@@ -142,8 +142,11 @@ npm run dev
 ### Backend (Render.com)
 1. Create a new **Web Service** on Render.
 2. Connect your repository.
-3. Render will auto-detect `render.yaml`.
-4. **Environment:** Docker (Database generated during build).
+3. Render will likely auto-detect `render.yaml` (Blueprint).
+4. If configuring manually:
+   - **Runtime:** Docker
+   - **Environment Variables:** `PYTHONUNBUFFERED=1` (key: value)
+   - **Note:** The database is generated automatically during the build process.
 5. **Copy the URL:** e.g., `https://treno-backend.onrender.com`
 
 ### Frontend (Vercel)
