@@ -24,14 +24,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/app /app/app
 COPY backend/scripts /app/scripts
 
-# Create data directory and generate database
-RUN mkdir -p /app/backend/data
 # Generate the database from the JSON source
-# Note: init_db.py writes to ../data/trains.db relative to the script location
-# Since we run from /app/scripts, it writes to /app/data/trains.db
+# init_db.py resolves DB_PATH to /app/data/trains.db
+# main.py resolves DB_PATH to /app/app/../data/trains.db = /app/data/trains.db
+# Both match, so no need to move the file after generation.
 RUN python scripts/init_db.py && \
-    python scripts/ingest_schedule_json.py && \
-    mv /app/data/trains.db /app/backend/data/trains.db
+    python scripts/ingest_schedule_json.py
 
 # Expose port
 EXPOSE 8000
