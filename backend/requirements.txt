@@ -1,4 +1,0 @@
-# Backend dependencies
-fastapi
-uvicorn
-pybreaker
