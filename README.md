@@ -13,9 +13,9 @@
 
 ## 1. Project Overview
 
-**Problem:** Existing rail portals are heavy and slow on 4G networks.
-**Solution:** A hybrid architecture delivering <1.5s latency using embedded static data and optimizied minimal payloads.
-**Status:** Engineering Prototype / Proof of Concept.
+- **Problem:** Existing rail portals are heavy and slow on 4G networks.
+- **Solution:** A hybrid architecture delivering <1.5s latency using embedded static data and optimized minimal payloads.
+- **Status:** Engineering Prototype / Proof of Concept.
 
 ### Architecture
 - **Frontend:** Next.js 16 + Tailwind CSS 3.4 (Vercel)
