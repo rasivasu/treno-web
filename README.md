@@ -98,7 +98,9 @@ Paste these prompts into your AI Agent sequentially to scaffold and build the ap
 
 **Prompt 4.1: Infrastructure as Code**
 > Prompt:
-> "Role: DevOps. Goal: Create `backend/Dockerfile` (optimize for Python/SQLite) and `render.yaml`. Create `vercel.json` for frontend. Generate `.env.example` with `NEXT_PUBLIC_API_URL`."
+> "Role: DevOps. Goal: Create `backend/Dockerfile` (optimize for Python/SQLite) and `render.yaml`.
+> **Constraint:** The Dockerfile MUST generate the `trains.db` file during the build process by running `init_db.py` and `ingest_schedule_json.py`.
+> Create `vercel.json` for frontend. Generate `.env.example` with `NEXT_PUBLIC_API_URL`."
 </details>
 
 ---
@@ -141,7 +143,7 @@ npm run dev
 1. Create a new **Web Service** on Render.
 2. Connect your repository.
 3. Render will auto-detect `render.yaml`.
-4. **Environment:** Python 3.11 / Docker.
+4. **Environment:** Docker (Database generated during build).
 5. **Copy the URL:** e.g., `https://treno-backend.onrender.com`
 
 ### Frontend (Vercel)
