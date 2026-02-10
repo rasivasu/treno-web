@@ -1,13 +1,12 @@
 services:
   - type: web
     name: treno-web
-    env: python
-    buildCommand: docker build -t treno-backend ./backend
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    env: docker
+    dockerContext: .
+    dockerfilePath: backend/Dockerfile
     envVars:
       - key: PYTHONUNBUFFERED
         value: 1
     plan: free
     region: singapore
     branch: main
-    rootDir: backend

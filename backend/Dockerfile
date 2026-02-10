@@ -24,10 +24,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/app /app/app
 COPY backend/scripts /app/scripts
 
-# Create data directory and copy database
-# CRITICAL: Copying the embedded SQLite database for deployment
+# Create data directory and generate database
 RUN mkdir -p /app/backend/data
-COPY backend/data/trains.db /app/backend/data/trains.db
+# Generate the database from the JSON source
+# Note: init_db.py writes to ../data/trains.db relative to the script location
+# Since we run from /app/scripts, it writes to /app/data/trains.db
+RUN python scripts/init_db.py && \
+    python scripts/ingest_schedule_json.py && \
+    mv /app/data/trains.db /app/backend/data/trains.db
 
 # Expose port
 EXPOSE 8000
