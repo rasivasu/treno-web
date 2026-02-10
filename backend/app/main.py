@@ -24,7 +24,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://treno-web.vercel.app"
+        "https://treno-web.vercel.app",
+        "https://treno-web-woad.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
