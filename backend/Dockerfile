@@ -20,9 +20,10 @@ COPY backend/requirements.txt .
 # Install python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy backend code
+# Copy backend code and data
 COPY backend/app /app/app
 COPY backend/scripts /app/scripts
+COPY backend/data/schedules.json /app/data/schedules.json
 
 # Generate the database from the JSON source
 # init_db.py resolves DB_PATH to /app/data/trains.db
