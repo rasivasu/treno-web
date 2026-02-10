@@ -4,11 +4,11 @@
 
 > [!IMPORTANT]
 > **Project Date:** 2026-02-10
-> This branch (`main`) contains the **final, completed state** of the project.
+> This branch (`starter`) is the **starting point** for the AI-Driven Development tutorial.
 >
-> If you are here to **try the Antigravity prompts** and build this application from scratch, please switch to the `starter` branch:
+> If you want to see the **final, completed project**, please switch to the `main` branch:
 > ```bash
-> git checkout starter
+> git checkout main
 > ```
 
 ## 1. Project Overview
